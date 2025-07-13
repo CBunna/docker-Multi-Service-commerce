@@ -1,45 +1,55 @@
-E-Commerce App with Docker
+# E-Commerce App with Docker
+
 This is my learning project where I built an online shopping website using Docker. It's like having multiple small apps working together to create one big website.
-What does this project do
 
-Shows a list of products like an online store
-Users can register and login
-Add items to shopping cart
-Place orders
-All running in separate Docker containers
+## What does this project do
 
-Technologies used
+- Shows a list of products like an online store
+- Users can register and login
+- Add items to shopping cart
+- Place orders
+- All running in separate Docker containers
 
-React - Frontend website
-Node.js - Backend server
-PostgreSQL - Database
-Redis - Caching for speed
-Nginx - Web server and routing
-Docker - Containerization
+## Technologies used
 
-How it works
+- **React** - Frontend website
+- **Node.js** - Backend server
+- **PostgreSQL** - Database 
+- **Redis** - Caching for speed
+- **Nginx** - Web server and routing
+- **Docker** - Containerization
+
+## How it works
+
+```
 User → Nginx → React App → Node.js API → Database
                               ↓
                            Redis Cache
-Requirements
+```
 
-Docker
-Docker Compose
+## Requirements
 
-How to run
+- Docker
+- Docker Compose
 
-Clone this project
+## How to run
 
-bashgit clone <your-repo-url>
+1. Clone this project
+```bash
+git clone <your-repo-url>
 cd multi-service-ecommerce
+```
 
-Start all services
+2. Start all services
+```bash
+docker-compose up --build
+```
 
-bashdocker-compose up --build
+3. Open your browser and go to: http://localhost
 
-Open your browser and go to: http://localhost
+## Project structure
 
-Project structure
+```
 project/
 ├── frontend/          # React app
 ├── backend/           # Node.js API
@@ -47,23 +57,44 @@ project/
 ├── database/          # Database setup
 ├── docker-compose.yml # Docker configuration
 └── README.md          # This file
-Useful commands
-Start everything:
-bashdocker-compose up
-Start in background:
-bashdocker-compose up -d
-Stop everything:
-bashdocker-compose down
-See running containers:
-bashdocker-compose ps
-View logs:
-bashdocker-compose logs
-Rebuild after code changes:
-bashdocker-compose up --build
-Testing the app
+```
 
-Go to http://localhost
-Register a new user
-Browse products
-Add items to cart
-Check API health at http://localhost/health
+## Useful commands
+
+Start everything:
+```bash
+docker-compose up
+```
+
+Start in background:
+```bash
+docker-compose up -d
+```
+
+Stop everything:
+```bash
+docker-compose down
+```
+
+See running containers:
+```bash
+docker-compose ps
+```
+
+View logs:
+```bash
+docker-compose logs
+```
+
+Rebuild after code changes:
+```bash
+docker-compose up --build
+```
+
+## Testing the app
+
+1. Go to http://localhost
+2. Register a new user
+3. Browse products
+4. Add items to cart
+5. Check API health at http://localhost/health
